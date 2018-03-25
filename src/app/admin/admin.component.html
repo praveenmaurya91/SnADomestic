@@ -1,0 +1,57 @@
+<header id="showcase">
+  <div class="container">
+    <mat-card id="card">
+      <mat-card-content>
+    
+        <div class="header-content">
+          <mat-card id="card-title">
+            <mat-card-title>
+              <h1>
+               Admin Login
+              </h1>
+            </mat-card-title>
+          </mat-card>
+          <hr>
+          <mat-card id="card-content">
+            <form class="form" (submit)="onSubmit()">
+              <p>
+                <mat-form-field class="example-full-width items">
+                  <input type="email" matInput placeholder="email" [(ngModel)]="email" name="email" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                    autocomplete="off">
+                  <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="example-full-width items">
+                  <input matInput placeholder="Enter your password" [type]=" 'password'" [(ngModel)]="password" name="password" [formControl]="passwordFormControl"
+                    [errorStateMatcher]="matcher">
+                  <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Password is
+                    <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </p>
+              <br>
+          
+              <div class="row">
+                <div class="buttons">
+                  <button mat-raised-button color="primary" class="btn" id="submitBtn">Sign In</button>
+                </div>
+              </div>
+
+    
+            </form>
+
+          </mat-card>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</header>

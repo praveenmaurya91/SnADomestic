@@ -1,0 +1,9 @@
+.nav{
+  z-index: 2;
+  position: relative;
+}
+
+.main-container{
+  position: absolute;
+z-index:1;
+}

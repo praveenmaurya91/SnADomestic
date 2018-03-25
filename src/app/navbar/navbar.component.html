@@ -1,0 +1,74 @@
+<div class="responsive-bar">
+  <div class="logo">
+    <a class="navbar-brand" href="#">S & A Domestic</a>
+  </div>
+  <div class="menu">
+    <h4>Menu</h4>
+  </div>
+</div>
+
+
+<section id="top"> 
+
+  <section id="home-heading" class="p-5">
+    <div class="dark-overlay">
+      <div class="row">
+        <div class="col">
+          <div class="container pt-5">
+            <img id="top-logo" src="./../assets/logo.png">
+            <div class="logo-text">
+              <h1>S & A Domestic </h1>
+              <h2>Reshape Your Time With Our Time</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <nav>
+      <div class="logo">
+        <a class="navbar-brand" href="#">
+
+        </a>
+      </div>
+      <ul class="active  mr-auto">
+        <li class="nav-item">
+          <a  routerLink="/home" class="active">Home</a>
+        </li>
+  
+        <li class="nav-item">
+          <a routerLink="/cleaning">Cleaning</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/service">Services</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/galary">Galary</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/booking">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/contact-us">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/career">Careers</a>
+        </li>
+        <li *ngIf="!isLoggedIn" class="nav-item">
+          <a routerLink="/admin">Admin</a>
+        </li>
+          <li *ngIf="isLoggedIn" class="nav-item">
+            <a routerLink="/dashboard">Dashboard</a>
+          </li>
+        <!-- <li *ngIf="isLoggedIn" class="nav-item">
+          <a routerLink="/admin" (click)="onLogoutClick()">Logout</a>
+        </li> -->
+      </ul>
+    </nav>
+  </div>
+</section>

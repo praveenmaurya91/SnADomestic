@@ -1,0 +1,10 @@
+footer#main-footer {
+  background: #000;
+  color: #fff; }
+
+  #call{
+      height: 5.5rem;
+      width: 20rem;
+      border-radius: 9vh;
+      font-size: 26px;
+  }

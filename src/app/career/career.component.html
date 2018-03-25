@@ -1,0 +1,189 @@
+<header id="page-header">
+  <div class="dark-overlay">
+    <div class="container">
+      <div class="row header">
+        <div class="col-md-6 m-auto text-center">
+          <h1>Career</h1>
+          <p>Jobs with S&A Domestics</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-3">
+
+  <div class="container">
+
+    <div class="row">
+
+     
+
+      <div class="col-md-6">
+
+        <mat-card id="card-content"></mat-card>   <mat-card id="card-content">
+
+          <h3 class="text-center">Please fill out this form to apply for job</h3>
+
+          <hr>
+
+          <form class="form" [formGroup]="userRegistrationForm" novalidate>
+            <div class="row">
+
+          <div class="col-md-12">
+            <mat-form-field class="example-full-width item">
+              <input matInput class="label " name="firstName" [(ngModel)]="career.firstName" placeholder="First name" formControlName="firstName"
+                autocomplete="off">
+            
+              <mat-error>
+                {{errors.firstName}}
+              </mat-error>
+            </mat-form-field>
+            </div>
+            
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width item">
+                <input matInput class="label" placeholder="Last name" name="lastName" [(ngModel)]="career.lastName" formControlName="lastName"
+                  autocomplete="off">
+                <mat-error>
+                  {{errors.lastName}}
+                </mat-error>
+              </mat-form-field>
+            </div>
+            
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width item">
+                <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="career.email" formControlName="email" autocomplete="off">
+                <mat-error>
+                  {{errors.email}}
+                </mat-error>
+              </mat-form-field>
+            </div>
+            
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width item">
+                <input type="phone" matInput placeholder="Phone Number" name="phone" [(ngModel)]="career.phone" formControlName="phone"
+                  autocomplete="off">
+                <mat-error>
+                  {{errors.phone}}
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+              <mat-form-field class="item">
+                <mat-select placeholder='Experience' name="experience" [(ngModel)]="career.experience" formControlName="experience">
+                  <mat-option>None</mat-option>
+                    <mat-option *ngFor="let exp of experience" [value]="exp.value">
+                      {{exp.value}}
+                    </mat-option>
+                </mat-select>
+                  <mat-error>
+                    {{errors.experience}}
+                  </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+              <mat-form-field class="item">
+                <mat-select placeholder='Do you have Australian driving licence?' name="licence" [(ngModel)]="career.licence" formControlName="licence">
+                  <mat-option>None</mat-option>
+                    <mat-option *ngFor="let licence of licence" [value]="licence.value">
+                      {{licence.value}}
+                    </mat-option>
+                </mat-select>
+                  <mat-error>
+                    {{errors.licence}}
+                  </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+              <mat-form-field class="item">
+                <mat-select placeholder='Do you have a car?' name="car" [(ngModel)]="career.car" formControlName="car">
+                  <mat-option>None</mat-option>
+                    <mat-option *ngFor="let car of car" [value]="car.value">
+                      {{car.value}}
+                    </mat-option>
+                </mat-select>
+                  <mat-error>
+                    {{errors.car}}
+                  </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+              <mat-form-field class="item">
+                <mat-select placeholder='Do you have Blue Card' name="blueCard" [(ngModel)]="career.blueCard" formControlName="blueCard">
+                  <mat-option>None</mat-option>
+                    <mat-option *ngFor="let blueCard of blueCard" [value]="blueCard.value">
+                      {{blueCard.value}}
+                    </mat-option>
+                </mat-select>
+                  <mat-error>
+                    {{errors.blueCard}}
+                  </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+              <mat-form-field class="item">
+                <mat-select placeholder='Do you have Police check?' name="afp" [(ngModel)]="career.afp" formControlName="afp">
+                  <mat-option>None</mat-option>
+                    <mat-option *ngFor="let afp of afp" [value]="afp.value">
+                      {{afp.value}}
+                    </mat-option>
+                </mat-select>
+                  <mat-error>
+                    {{errors.afp}}
+                  </mat-error>
+              </mat-form-field>
+            </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-12">
+                <mat-form-field class="example-full-width message">
+                  <textarea matInput placeholder="Cover Letter "  name="coverLetter"[(ngModel)]="career.coverLetter" formControlName="coverLetter" autocomplete="off"></textarea>
+                    <mat-error>
+                      {{errors.coverLetter}}
+                    </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+
+            <br>
+            <!--button-->
+            <div class="row">
+              <div class="buttons">
+                <button mat-raised-button color="primary" type="submit" class="btn" id="submitBtn" (click)="onSubmit()" [disabled]="userRegistrationForm.invalid">Submit</button>
+              </div>
+            </div>
+           
+          </form>
+
+
+        </mat-card>
+      </div>
+      <div class="col-md-6">
+      
+              <mat-card id="card-title">
+                
+                <h3>Why Join Us</h3>
+                <br>
+                  <img src="../../assets/cleaner2.jpg" class="img-fluid" alt="">
+                <br><br><br>
+                <p>Join the booming home service industry and work in nice family homes helping busy professional couples, time poor families
+                and the elderly with their housework. It’s what we do in our own homes every day. The only difference is that you get paid
+                for it! S&A Domestics provides a steady flow of work for thousands of people throughout Australia. </p>
+                
+      
+              </mat-card>
+      
+            </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,111 @@
+
+  <header id="page-header">
+    <div class="dark-overlay">
+    <div class="container">
+      <div class="row header">
+        <div class="col-md-6 m-auto text-center">
+          <h1>Contact Us</h1>   
+          <p>Make an appointment for the enquiry</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-3">
+    
+    <div class="container">
+      
+      <div class="row">
+     
+        <div class="col-md-4">
+           
+          <mat-card id="card-title">
+            <h4>Get In Touch</h4>
+            <p>Contact our friendly customer service team for the sedrvice </p>
+            <h4>Address</h4>
+            <p>Redland city</p>
+            <h4>Email</h4>
+            <p>sales@snadomestic.com</p>
+            <h4>Phone</h4>
+            <p>0475 902 71</p>
+          
+          </mat-card>
+       
+        </div>
+       
+        <div class="col-md-6">
+           
+            <mat-card id="card-content">
+                
+                  <h3 class="text-center">Please fill out this form to contact us</h3>
+                        
+                  <hr>
+         
+                  <form class="form" [formGroup]="userRegistrationForm" novalidate>
+                    <div class="row">
+                          <div class="col-md-12">
+                          <mat-form-field class="example-full-width item">
+                            <input matInput class="label " name="firstName" [(ngModel)]="contact.firstName" placeholder="First name" formControlName="firstName" autocomplete="off">
+                            
+                              <mat-error>
+                                {{errors.firstName}}
+                              </mat-error>
+                          </mat-form-field>
+                          </div>
+          
+                          <div class="col-md-12">
+                          <mat-form-field class="example-full-width item">
+                            <input matInput class="label" placeholder="Last name" name="lastName" [(ngModel)]="contact.lastName" formControlName="lastName" autocomplete="off" >
+                              <mat-error>
+                                {{errors.lastName}}
+                              </mat-error>
+                          </mat-form-field>
+                          </div>
+                          
+                          <div class="col-md-12">
+                          <mat-form-field class="example-full-width item">
+                            <input type="email" matInput placeholder="Email" name="email"  [(ngModel)]="contact.email" formControlName="email" autocomplete="off">
+                              <mat-error>
+                                {{errors.email}}
+                              </mat-error>
+                          </mat-form-field>
+                          </div>
+                          
+                          <div class="col-md-12">
+                          <mat-form-field class="example-full-width item">
+                            <input type="phone" matInput placeholder="Phone Number" name="phone" [(ngModel)]="contact.phone" formControlName="phone" autocomplete="off">
+                            <mat-error>
+                              {{errors.phone}}
+                            </mat-error>
+                          </mat-form-field>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <mat-form-field class="example-full-width message">
+                            <textarea matInput placeholder="Message" name="message"[(ngModel)]="contact.message" formControlName="message" autocomplete="off" ></textarea>
+                            <mat-error>
+                              {{errors.message}}
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+                      </div>
+                    <br>
+                    <!--button-->
+                    <div class="row">
+                      <div class="buttons">
+                        <button mat-raised-button color="primary" type="submit" class="btn"  id="submitBtn" (click)="onSubmit()" [disabled]="userRegistrationForm.invalid">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+
+                  
+              </mat-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 

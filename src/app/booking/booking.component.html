@@ -1,0 +1,134 @@
+<header id="page-header">
+  <div class="dark-overlay">
+    <div class="container">
+      <div class="row header">
+        <div class="col-md-6 m-auto text-center">
+          <h1>Booking</h1>
+          <p>Make an appointment for the service</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-3">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-11">
+
+        <mat-card id="card-content">
+
+          <h3 class="text-center">Please fill out this form to make a booking</h3>
+
+          <hr>
+
+          <form class="form" [formGroup]="userRegistrationForm" novalidate>
+            <div class="row">
+            
+                <mat-form-field class="example-full-width item">
+                  <input matInput class="label" name="name" placeholder="Name" [(ngModel)]="booking.name" formControlName="name" autocomplete="off">
+                      <mat-error>
+                        {{errors.name}}
+                      </mat-error>
+                </mat-form-field>
+              
+                <mat-form-field class="example-full-width item">
+                  <input type="email" matInput placeholder="Email" name="email" [(ngModel)]="booking.email" formControlName="email" autocomplete="off">
+                      <mat-error>
+                        {{errors.email}}
+                      </mat-error>
+                </mat-form-field>
+                 
+              <mat-form-field class="example-full-width item">
+                <input type="address" matInput placeholder="Address" name="address" [(ngModel)]="booking.address" formControlName="address" autocomplete="off">
+                    <mat-error>
+                      {{errors.address}}
+                    </mat-error>
+              </mat-form-field>
+              
+                <mat-form-field class="example-full-width item">
+                  <input type="phone" matInput placeholder="Phone Number" name="phone" [(ngModel)]="booking.phone" formControlName="phone" autocomplete="off">
+                      <mat-error>
+                        {{errors.phone}}
+                      </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="item">
+                  <input matInput [matDatepicker]="picker"  placeholder="Choose a appointment date"  [(ngModel)]="booking.date" formControlName="date" autocomplete="off">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                      <mat-error>
+                        {{errors.date}}
+                      </mat-error>
+                </mat-form-field>
+
+              <mat-form-field class="item">
+                <mat-select placeholder='Service Type' [(ngModel)]="booking.service" formControlName="service" >
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let ser of service" [value]="ser.viewValue">
+                       {{ser.viewValue}}
+                  </mat-option>
+                </mat-select>
+                  <mat-error>
+                    {{errors.ser}}
+                  </mat-error>
+              </mat-form-field>
+
+
+            <mat-form-field class="item">
+              <mat-select placeholder='How many bedrooms'  [(ngModel)]="booking.bedroom" formControlName="bedroom">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let bedroom of bedroom" [value]="bedroom.value">
+                  {{bedroom.value}}
+                </mat-option>
+              </mat-select>
+                <mat-error>
+                  {{errors.bedroom}}
+                </mat-error>
+            </mat-form-field>
+
+              <mat-form-field class="item">
+                <mat-select placeholder='How many bathrooms' name="bathroom" [(ngModel)]="booking.bathroom" formControlName="bathroom">
+                  <mat-option>None</mat-option>
+                    <mat-option *ngFor="let bath of bathroom" [value]="bath.value">
+                      {{bath.value}}
+                    </mat-option>
+                </mat-select>
+                  <mat-error>
+                    {{errors.bathroom}}
+                  </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width message">
+                <textarea matInput placeholder="Message" name="message" [(ngModel)]="booking.message" formControlName="message"></textarea>
+                  <mat-error>
+                    {{errors.message}}
+                  </mat-error>
+              </mat-form-field>    
+
+
+
+            </div>          
+            <div class="row">
+              <div class="col-md-12 ">     
+              </div>
+            </div>
+            <br>
+
+            <div class="row">
+              <div class="buttons">
+                <button mat-raised-button color="primary" type="submit" class="btn" id="submitBtn" (click)="onSubmit()" [disabled]="userRegistrationForm.invalid">Submit</button>
+              </div>
+            </div>
+          </form>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+
