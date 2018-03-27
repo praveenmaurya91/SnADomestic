@@ -21,31 +21,25 @@ export class GalaryComponent implements OnInit {
     new Image(
       0,
       { // modal
-        img: '../../assets/image1.jpg',
-        extUrl: 'http://www.google.com'
+        img: '../../assets/image1.jpg',  
       }
     ),
     new Image(
       1,
       { // modal
-        img: '../../assets/image2.jpg',
-        description: 'Description 2'
+        img: '../../assets/image2.jpg', 
       }
     ),
     new Image(
       2,
       { // modal
-        img: '../../assets/image3.jpg',
-        description: 'Description 3',
-        extUrl: 'http://www.google.com'
+        img: '../../assets/image3.jpg',   
       },
     ),
     new Image(
       3,
       { // modal
         img: '../../assets/galary/shower2.jpg',
-        description: 'Description 4',
-        extUrl: 'http://www.google.com'
       }
     ),
     new Image(

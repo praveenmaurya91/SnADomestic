@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/aos/dist/aos.css",
         "styles.css"
       ],
       "scripts": ["../node_modules/jquery/dist/jquery.min.js"],
