@@ -12,10 +12,8 @@ import { Router } from '@angular/router';
 })
 export class DisplayBookingsComponent implements OnInit {
 
-  /**sidenav start */
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-  /**sidenav end */
 
   bookings: Booking[];
   bookingEditState: boolean = false;
@@ -47,7 +45,7 @@ export class DisplayBookingsComponent implements OnInit {
   }
   onLogoutClick() {
     this.authService.logout();
-    this.router.navigate(['/']);
+    this.router.navigate(['/admin']);
   }
   /********* Booking *************/
   deleteBooking(event, booking: Booking) {

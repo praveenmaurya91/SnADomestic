@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-//import { AngularFireDatabase } from 'angularfire2/database';
 import { error } from '@firebase/database/dist/esm/src/core/util/util';
 import { FormGroup, FormControl, FormGroupDirective, NgForm, ValidatorFn, FormBuilder, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
-//import * as firebase from 'firebase';
 import { MatSnackBar } from '@angular/material';
 import { ContactService } from '../services/contact.service';
 import { Contact } from '../models/contact'; 
@@ -17,7 +15,6 @@ import { Router } from '@angular/router';
 })
 export class ContactUsComponent implements OnInit {
 
-  //items: Observable<any[]>;
   userRegistrationForm: FormGroup;
   contact: Contact = {
     firstName: '',
@@ -45,12 +42,9 @@ export class ContactUsComponent implements OnInit {
     private router: Router,
   ) { 
    this.createForm();
-
   }
 
-
-   ngOnInit() {
-   }
+  ngOnInit() {}
 
   createForm() {
     this.userRegistrationForm = this.formBuilder.group({
@@ -72,21 +66,15 @@ export class ContactUsComponent implements OnInit {
       ]],
     });
   }
-
+/** 
+ * onSubmit function call the service to store the data into the firebase
+*/
   onSubmit() {
- 
-      this.contactService.addItem(this.contact);
-
-  
+    this.contactService.addItem(this.contact);
     this.snackBar.open('Your message has been sent', this.action, { duration: 4000, } );  
-
     this.router.navigate(['']);
   }
-
-
 }
-
-
 
 
 /**

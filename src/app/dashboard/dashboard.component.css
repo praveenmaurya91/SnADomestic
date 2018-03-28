@@ -1,32 +1,13 @@
 #top{
-    margin-top: 5vh;
-    height: 100vh;
-
-    background-image:url("../../assets/login2.jpg");
-    background-size:cover;
-    background-position:center;
+  margin-top: 5vh;
+  height: 100vh;
+  background-image:url("../../assets/login2.jpg");
+  background-size:cover;
+  background-position:center;
 }
 #tabs{
-    align-items: center;
-   
+  align-items: center; 
 }
-/* #card-content{
-    width: 80vw;;
-} */
- @media(max-width:786px)
-{
-    /* #card-content{
-    width: 50vh;
-} */
-#top{
-    margin-top:7vh;
-    background-image:none;
-}
-
-}
-
-
-
 .example-container {
   display: flex;
   flex-direction: column;
@@ -36,8 +17,6 @@
   left: 0;
   right: 0;
 }
-
-
 .example-is-mobile .example-toolbar {
   position: fixed;
   /* Make sure the toolbar will stay on top of the content as it scrolls past. */
@@ -58,4 +37,12 @@ h1.example-app-name {
   /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
      `<body>` to be our scrolling element for mobile layouts. */
   flex: 1 0 auto;
+}
+
+@media(max-width:786px)
+{
+  #top{
+    margin-top:7vh;
+    background-image:none;
+  }
 }

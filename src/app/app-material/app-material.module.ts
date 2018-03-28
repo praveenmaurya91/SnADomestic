@@ -1,4 +1,6 @@
-
+/**
+ * Angular Material Design Components
+ */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,6 +46,5 @@ import { MatNativeDateModule } from '@angular/material';
     MatDatepickerModule,
     MatNativeDateModule,
   ]
-  //declarations: []
 })
 export class AppMaterialModule { }

@@ -6,10 +6,7 @@
     <h4>Menu</h4>
   </div>
 </div>
-
-
-<section id="top"> 
-
+<section id="top">
   <section id="home-heading" class="p-5 ">
     <div class="dark-overlay">
       <div class="row">
@@ -25,19 +22,16 @@
       </div>
     </div>
   </section>
-
   <div class="container">
     <nav>
       <div class="logo">
         <a class="navbar-brand" href="#">
-
         </a>
       </div>
       <ul class="active  mr-auto">
         <li class="nav-item">
-          <a  routerLink="/home" class="active">Home</a>
+          <a routerLink="/home" class="active">Home</a>
         </li>
-  
         <li class="nav-item">
           <a routerLink="/cleaning">Cleaning</a>
         </li>
@@ -62,12 +56,9 @@
         <li *ngIf="!isLoggedIn" class="nav-item">
           <a routerLink="/admin">Admin</a>
         </li>
-          <li *ngIf="isLoggedIn" class="nav-item">
-            <a routerLink="/dashboard">Dashboard</a>
-          </li>
-        <!-- <li *ngIf="isLoggedIn" class="nav-item">
-          <a routerLink="/admin" (click)="onLogoutClick()">Logout</a>
-        </li> -->
+        <li *ngIf="isLoggedIn" class="nav-item">
+          <a routerLink="/dashboard">Dashboard</a>
+        </li>
       </ul>
     </nav>
   </div>

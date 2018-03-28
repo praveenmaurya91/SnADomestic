@@ -1,27 +1,9 @@
-// import { Component, OnInit } from '@angular/core';
-
-// @Component({
-//   selector: 'app-career',
-//   templateUrl: './career.component.html',
-//   styleUrls: ['./career.component.css']
-// })
-// export class CareerComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
-
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-//import { AngularFireDatabase } from 'angularfire2/database';
 import { error } from '@firebase/database/dist/esm/src/core/util/util';
 import { FormGroup, FormControl, FormGroupDirective, NgForm, ValidatorFn, FormBuilder, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material';
 import { AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection } from 'angularfire2/firestore';
-//import * as firebase from 'firebase';
 import { MatSnackBar } from '@angular/material';
 import { CareerService } from '../services/career.service';
 import { Career } from '../models/career';
@@ -33,7 +15,6 @@ import { Router } from '@angular/router';
 })
 export class CareerComponent implements OnInit {
 
-  //items: Observable<any[]>;
   userRegistrationForm: FormGroup;
   career: Career = {
     firstName: '',
@@ -89,14 +70,11 @@ export class CareerComponent implements OnInit {
     private formBuilder: FormBuilder,
     private careerService: CareerService,
     private router: Router,
-  ) {
+  ){
     this.createForm();
-
   }
-
-
-  ngOnInit() {
-  }
+  
+  ngOnInit() {}
 
   createForm() {
     this.userRegistrationForm = this.formBuilder.group({
@@ -114,7 +92,6 @@ export class CareerComponent implements OnInit {
         Validators.email
       ]],
       coverLetter: ['', [
-       // Validators.required
       ]],
       experience: ['', [
         Validators.required
@@ -133,22 +110,15 @@ export class CareerComponent implements OnInit {
       ]],
     });
   }
-
+/** 
+ * onSubmit function call the service to store the data into the firebase
+*/
   onSubmit() {
-
     this.careerService.addItem(this.career);
-
-
     this.snackBar.open('Your message has been sent', this.action, { duration: 4000, });
-
     this.router.navigate(['']);
   }
-
-
 }
-
-
-
 
 /**
  * Custom validator functions for reactive form validation
@@ -195,4 +165,3 @@ export const errorMessages: { [key: string]: string } = {
   blueCard: 'Please you need to select one option',
   afp: 'Please you need to select one option',
 };
-

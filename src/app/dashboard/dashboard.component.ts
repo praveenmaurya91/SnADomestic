@@ -11,10 +11,8 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  /**sidenav start */
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-  /**sidenav end */
 
   careers: Career[];
   careerEditState: boolean = false;
@@ -29,7 +27,7 @@ export class DashboardComponent implements OnInit {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-
+    
     }
 
   ngOnDestroy(): void {
@@ -45,7 +43,7 @@ export class DashboardComponent implements OnInit {
   }
   onLogoutClick() {
     this.authService.logout();
-    this.router.navigate(['/']);
+    this.router.navigate(['/admin']);
   }
   /********* Career *************/
   deleteCareer(event, career: Career) {

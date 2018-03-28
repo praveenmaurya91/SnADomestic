@@ -4,11 +4,10 @@
     background-size:cover;
     background-position:center;
     height:80vh;
-    /* width:100vw; */
     display:flex;
     flex-direction:column;
   } 
-#card{
+  #card{
     width:50vh;
     height: 50vh;
     margin-top: 15vh;
@@ -29,8 +28,7 @@
        color: white;
        width:44vh;
        height: 5rem;
-       text-align: center;
-       
+       text-align: center;  
   }
    #card-title h1{
       margin-top: -1vh;
@@ -39,7 +37,6 @@
     width:40rem;
   }
  
-  
   .header-content form{
     font-size:2vh;
     text-align: justify;
@@ -54,25 +51,22 @@
     -moz-box-shadow: inset 2px 2px 5px 0px #042E4D;
     box-shadow: inset 2px 2px 5px 0px #182D3A;
   }
-    .items{
+  .items{
       width:40vh;
-  
   }
  
 @media(max-width:786px)
 {
     #card{
-    width:49vh;
-    height: 55vh;
-  } 
+      width:49vh;
+      height: 55vh;
+    } 
    .btn{
-  margin-left: 2vh;
-  margin-top: -1vh;
-    width:40vh;
-  }
-    #card-content
-  {
-
-    height: 37vh;
-  }  
+      margin-left: 2vh;
+      margin-top: -1vh;
+      width:40vh;
+    }
+    #card-content{
+      height: 37vh;
+    }  
 }

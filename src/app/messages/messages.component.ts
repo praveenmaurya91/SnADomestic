@@ -11,12 +11,8 @@ import { MediaMatcher } from '@angular/cdk/layout';
 })
 export class MessagesComponent implements OnInit {
 
-  /**sidenav start */
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
-  /**sidenav end */
-
- 
 
   contacts: Contact[];
   contactEditState: boolean = false;
@@ -46,7 +42,7 @@ export class MessagesComponent implements OnInit {
   }
   onLogoutClick() {
     this.authService.logout();
-    this.router.navigate(['/']);
+    this.router.navigate(['/admin']);
   }
   /********* Contact *************/
   deleteContact(event, contact: Contact) {

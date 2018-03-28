@@ -1,7 +1,7 @@
 
 const functions = require('firebase-functions');
 
-// The Firebase Admin SDK to access the Firebase Realtime Database. 
+// The Firebase Admin SDK to access the Firestore Database. 
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
@@ -9,7 +9,9 @@ const nodemailer = require('nodemailer');
 const gmailEmail = encodeURIComponent(functions.config().gmail.email);
 const gmailPassword = encodeURIComponent(functions.config().gmail.password);
 const mailTransport = nodemailer.createTransport(`smtps://${gmailEmail}:${gmailPassword}@smtp.gmail.com`);
-
+/** 
+ * function for sending the contact messages to the gmail account
+*/
 exports.sendMessage = functions.firestore
     .document('contacts/{userId}')
     .onCreate(event => {
@@ -17,7 +19,7 @@ exports.sendMessage = functions.firestore
         // e.g. {'name': 'Marie', 'age': 66}
         const value = event.data.data();
 
-        // perform desired operations ...
+        // Template for sending the email.
         const mailOptions = {
             to: 'snadomestic@gmail.com',
             subject: `New message from ${value.firstName}  ${value.lastName }`,
@@ -35,14 +37,17 @@ exports.sendMessage = functions.firestore
         });
     });
 
+/** 
+ * function for sending the booking details to the gmail account
+*/
 exports.sendBookings = functions.firestore
     .document('bookings/{userId}')
     .onCreate(event => {
+
         // Get an object representing the document
-        // e.g. {'name': 'Marie', 'age': 66}
         const value = event.data.data();
 
-        // perform desired operations ...
+        // Email Template
         const mailOptions = {
             to: 'snadomestic@gmail.com',
             subject: `New Booking from ${value.name}`,
@@ -66,14 +71,17 @@ exports.sendBookings = functions.firestore
         });
     });
 
+/** 
+ * function for sending the Job applications to the gmail account
+*/
 exports.sendCareer = functions.firestore
     .document('careers/{userId}')
     .onCreate(event => {
+
         // Get an object representing the document
-        // e.g. {'name': 'Marie', 'age': 66}
         const value = event.data.data();
 
-        // perform desired operations ...
+        // Email Template
         const mailOptions = {
             to: 'snadomestic@gmail.com',
             subject: `New job application from ${value.firstName} ${value.lastName}`,

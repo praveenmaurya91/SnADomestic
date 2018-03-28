@@ -20,37 +20,37 @@ export class GalaryComponent implements OnInit {
   images: Image[] = [
     new Image(
       0,
-      { // modal
+      { 
         img: '../../assets/image1.jpg',  
       }
     ),
     new Image(
       1,
-      { // modal
+      { 
         img: '../../assets/image2.jpg', 
       }
     ),
     new Image(
       2,
-      { // modal
+      { 
         img: '../../assets/image3.jpg',   
       },
     ),
     new Image(
       3,
-      { // modal
+      { 
         img: '../../assets/galary/shower2.jpg',
       }
     ),
     new Image(
       4,
-      { // modal
+      { 
         img: '../../assets/galary/kitchen.JPG'
       },
     ),
      new Image(
       5,
-      { // modal
+      { 
         img: '../../assets/galary/shower.jpg'
       },
     )

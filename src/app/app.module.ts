@@ -10,8 +10,6 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-//import { AngularFireDatabase } from 'angularfire2/database';
-//import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contact.service';
 import { BookingService } from './services/booking.service';
 import { AuthService } from './services/auth.service';
@@ -56,9 +54,7 @@ const appRoutes: Routes = [
   { path: 'booking', component: BookingComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
-
 ]
-
 
 @NgModule({
   declarations: [
@@ -68,7 +64,6 @@ const appRoutes: Routes = [
     FooterComponent,
     AboutComponent,
     ContactUsComponent,
-
     CareerComponent,
     GalaryComponent,
     ServiceComponent,
@@ -87,8 +82,8 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFirestoreModule, 
+    AngularFireStorageModule, 
     AngularFireModule.initializeApp(environment.firebase),
     ModalGalleryModule.forRoot(),
     RouterModule.forRoot(

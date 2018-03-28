@@ -105,36 +105,21 @@ export class BookingComponent implements OnInit {
       date: ['', [
         Validators.required
       ]],
-      message: ['', [
-        // Validators.required
-      ]],
-      service: ['', [
-        // Validators.required
-      ]],
-      bedroom: ['', [
-        // Validators.required
-      ]],
-      bathroom: ['', [
-        // Validators.required
-      ]],
+      message: ['', []],
+      service: ['', []],
+      bedroom: ['', []],
+      bathroom: ['', []],
     });
   }
-
+/**
+ * submit function to call the booking service and sending the data to the firestore
+ */
   onSubmit() {
-
     this.bookingService.addItem(this.booking);
-
-
     this.snackBar.open('Your message has been sent', this.action, { duration: 4000, });
-
     this.router.navigate(['']);
   }
-
-
 }
-
-
-
 
 
 /**
@@ -176,9 +161,5 @@ export const errorMessages: { [key: string]: string } = {
   email: 'Email must be a valid email address (username@domain)',
   address: 'Address is required',
   date: 'Date is required',
-  // message: 'Message is required',
-  // bedroom: 'Email must be a valid email address (username@domain)',
-  // bathroom: 'Address is required',
-  // service: 'Date is required',
 };
 
